@@ -1,0 +1,32 @@
+class New extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  getRef(ref){
+		self.queryRef = ref;
+	}
+  handleClick() {
+   var input = self.queryRef.value;
+   var nilai = input * 6500;
+   alert("Rp."+nilai+",-");
+  }
+
+  render() {
+    var self = this;
+    return (
+      <div>
+        <a> Premium</a>
+        <input ref={self.getRef} placeholder="/Ltr"/>
+        <button onClick={this.handleClick}>
+          Process
+        </button>
+     </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <New />,
+  document.getElementById('app')
+);
